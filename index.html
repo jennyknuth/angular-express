@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Swords and Potions</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
 </head>
-<body>
-Magic
+<body ng-controller="SwordController">
+  <h1>Magic Swords</h1>
+
+  <div ng-view></div>
+
+  <script src="app.js"></script>
+  <script src="controllers.js"></script>
+  <script src="services.js"></script>
+  <script src="routes.js"></script>
 </body>
 </html>

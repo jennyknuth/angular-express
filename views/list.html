@@ -1,0 +1,30 @@
+<button ng-click="toggleForm()">+ Add sword</button>
+
+<form ng-show="form" ng-submit="addSword(sword)">
+  <input type="text" ng-model='sword.material' placeholder='material'>
+  <input type="text" ng-model='sword.length' placeholder='length'>
+  <input type="text" ng-model='sword.value' placeholder='value'>
+  <input type="text" ng-model='sword.owner' placeholder='owner'>
+  <input type="submit">
+</form>
+
+<div ng-repeat="sword in swords">
+  <p></p>
+  <h2>Sword</h2>
+  <button ng-hide="sword.edit" ng-click="editSword(sword)">EDIT</button>
+  <button ng-show="sword.edit" ng-click="editSword(sword)">BACK</button>
+  <button ng-click="removeSword(sword)">DELETE</button>
+    <form ng-show="sword.edit" ng-submit="updateSword(sword)">
+      <h2>Owner: <input type="text" ng-model='sword.owner' placeholder='owner'></h2>
+      <p>length: <input type="text" ng-model='sword.material' placeholder='material'></p>
+      <p>material: <input type="text" ng-model='sword.length' placeholder='length'></p>
+      <p>value: <input type="text" ng-model='sword.value' placeholder='value'></p>
+      <input type="submit">
+    </form>
+  <div ng-hide="sword.edit">
+    <h2>Owner: {{sword.owner}}</h2>
+    <p>length: {{sword.length}}</p>
+    <p>material: {{sword.material}}</p>
+    <p>value: {{sword.value}}</p>
+  </div>
+</div>
