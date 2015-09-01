@@ -1,4 +1,20 @@
-<h2><span ng-click="removeSword(sword)">X </span>Owner: {{sword.owner}}</h2>
-<p>length: {{sword.length}}</p>
-<p>material: {{sword.material}}</p>
-<p>value: {{sword.value}}</p>
+<br>
+
+<form ng-show="sword.edit" ng-submit="updateSword(sword)">
+  <h2>Owner: <input type="text" ng-model='sword.owner' placeholder='owner'></h2>
+  <p>length: <input type="text" ng-model='sword.material' placeholder='material'></p>
+  <p>material: <input type="text" ng-model='sword.length' placeholder='length'></p>
+  <p>value: <input type="text" ng-model='sword.value' placeholder='value'></p>
+  <input type="submit">
+</form>
+<div ng-hide="sword.edit">
+  <h2>Owner: {{sword.owner}}</h2>
+  <p>length: {{sword.length}}</p>
+  <p>material: {{sword.material}}</p>
+  <p>value: {{sword.value}}</p>
+</div>
+<button ng-hide="sword.edit" ng-click="editSword(sword)">EDIT</button>
+<button ng-show="sword.edit" ng-click="editSword(sword)">BACK</button>
+<button ng-click="removeSword(sword)">DELETE</button>
+<br>
+<a href="#/"><button>BACK TO ALL SWORDS</button></a>

@@ -20,6 +20,21 @@ app.controller('SwordController', ['$scope', 'swordservice', function ($scope, s
   $scope.updateSword = function (sword) {
     swordservice.update(sword)
   }
+}])
 
+app.controller('ItemController', ['$scope', 'swordservice', '$routeParams', '$location', function ($scope, swordservice, $routeParams, $location) {
 
+  console.log($routeParams);
+  item = $routeParams;// an object
+  swordservice.getSword(item).then(function(data){
+    $scope.sword = data
+  })
+  $scope.editSword = function (sword) {
+    console.log('hello');
+    sword.edit === true ? sword.edit = false : sword.edit = true
+  }
+  $scope.removeSword = function (sword) {
+    swordservice.remove(sword)
+    $location.path('/')
+  }
 }])

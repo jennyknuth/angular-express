@@ -12,6 +12,15 @@ app.factory('swordservice', ["$http", "$q", "$location", "$route", function ($ht
     });
     return deferred.promise;
   }
+  swordservice.getSword = function(item){
+    var deferred = $q.defer();
+    $http.get(url + '/' + item.id).success(function (data) {
+      deferred.resolve(data);
+    }).error(function () {
+      deferred.reject("Error!");
+    });
+    return deferred.promise;
+  }
   swordservice.newSword = function(sword) {
     $http.post(url, sword).then(function(response){
       console.log(response);

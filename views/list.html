@@ -10,7 +10,7 @@
 
 <div ng-repeat="sword in swords">
   <p></p>
-  <h2>Sword</h2>
+  <a href="#/{{sword._id}}"><h2>Sword</h2></a>
   <button ng-hide="sword.edit" ng-click="editSword(sword)">EDIT</button>
   <button ng-show="sword.edit" ng-click="editSword(sword)">BACK</button>
   <button ng-click="removeSword(sword)">DELETE</button>

@@ -5,5 +5,10 @@ app.config(function($routeProvider){
   })
   .when('/:id', {
     templateUrl: 'views/show.html',
+    controller: 'ItemController'
+  })
+  .otherwise('/', {
+    templateUrl: 'views/list.html',
+    controller: 'SwordController'
   })
 })
