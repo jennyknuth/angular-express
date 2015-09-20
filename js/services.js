@@ -27,13 +27,13 @@ app.factory('swordservice', ["$http", "$q", "$location", "$route", function ($ht
       $route.reload();
     });
   }
-  swordservice.update = function(sword) {
-    console.log(sword);
-    $http.put(url + '/' + sword._id, sword).then(function(response) {
-      console.log(response);
-      $route.reload();
-    });
-  }
+  // swordservice.update = function(sword) {
+  //   console.log(sword);
+  //   $http.put(url + '/' + sword._id, sword).then(function(response) {
+  //     console.log(response);
+  //     $route.reload();
+  //   });
+  // }
   swordservice.remove = function(sword) {
     console.log(sword);
     $http.delete(url + '/' + sword._id, sword).then(function(response) {
